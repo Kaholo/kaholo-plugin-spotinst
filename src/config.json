@@ -1,0 +1,27 @@
+{
+    "name": "spotinst",
+    "type": "executer",
+    "imgUrl": "spotinst.png",
+    "execProgram": "node",
+    "main": "app.js",
+    "version": "1.0.0",
+    "description": "",
+    "methods": [
+        {
+            "name": "listAllElastiGroup",
+            "viewName": "List all Elastigroups",
+            "params": [
+                {
+                    "name": "ACCOUNT_ID",
+                    "viewName": "Account Id",
+                    "type": "vault"
+                },
+                {
+                    "name": "TOKEN",
+                    "viewName": "Token",
+                    "type": "vault"
+                }
+            ]
+        }
+    ]
+}
