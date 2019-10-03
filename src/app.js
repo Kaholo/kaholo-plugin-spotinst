@@ -10,18 +10,18 @@ function setupClient(accountId, token) {
 }
 
 function listAllElastiGroup(action, settings) {
-    const token = settings.TOKEN || action.params.TOKEN;
-    const accountId = settings.ACCOUNT_ID || action.params.ACCOUNT_ID
-    let client = setupClient(accountId, token);
-    return client.AwsGroupService.list()
-        .then((groups) => {
-            return groups
-            // do something with groups
-        })
-        .catch((err) => {
-            return `error ${err}`
-            // do something with err
-        });
+    return new Promise((resolve, reject) => {
+        const token = settings.TOKEN || action.params.TOKEN;
+        const accountId = settings.ACCOUNT_ID || action.params.ACCOUNT_ID
+        let client = setupClient(accountId, token);
+        return client.AwsGroupService.list()
+            .then((groups) => {
+                return resolve(groups)
+            })
+            .catch((err) => {
+                return reject(err)
+            });
+    })
 }
 
 module.exports = {

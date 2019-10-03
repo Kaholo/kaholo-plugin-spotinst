@@ -1,7 +1,7 @@
 {
     "name": "spotinst",
     "type": "executer",
-    "imgUrl": "spotinst.png",
+    "imgUrl": "logo.png",
     "execProgram": "node",
     "main": "app.js",
     "version": "1.0.0",
