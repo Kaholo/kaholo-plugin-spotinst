@@ -6,6 +6,18 @@
     "main": "app.js",
     "version": "1.0.0",
     "description": "",
+    "settings" : [
+        {
+          "name": "ACCOUNT_ID",
+          "viewName": "Account Id",
+          "type": "string"
+        },
+        {
+          "name": "TOKEN",
+          "viewName": "Token",
+          "type": "vault"
+        }
+      ],
     "methods": [
         {
             "name": "listAllElastiGroup",
@@ -14,7 +26,7 @@
                 {
                     "name": "ACCOUNT_ID",
                     "viewName": "Account Id",
-                    "type": "vault"
+                    "type": "string"
                 },
                 {
                     "name": "TOKEN",

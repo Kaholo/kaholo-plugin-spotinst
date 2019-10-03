@@ -11,8 +11,8 @@ function setupClient(accountId, token) {
 
 function listAllElastiGroup(action, settings) {
     return new Promise((resolve, reject) => {
-        const token = settings.TOKEN || action.params.TOKEN;
-        const accountId = settings.ACCOUNT_ID || action.params.ACCOUNT_ID
+        const token = action.params.TOKEN || settings.TOKEN;
+        const accountId = action.params.ACCOUNT_ID || settings.ACCOUNT_ID
         let client = setupClient(accountId, token);
         return client.AwsGroupService.list()
             .then((groups) => {
